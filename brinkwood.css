@@ -32,6 +32,16 @@
   content: "";
 }
 
+.sheet-tyrannylabel{
+  flex: 0 0 auto;
+  margin: 0 2px;
+  padding-left: 5px;
+  letter-spacing: -1px;
+  font-size: 35px;
+  line-height: 40px;
+  width: calc(74% - 7px);
+}
+
 .charsheet label {
   margin: 0;
   padding: 0;
@@ -196,14 +206,16 @@
 
 .sheet-type-selector .sheet-3waybox:not(:checked) + .sheet-3waybox,
 .sheet-type-selector input[value="character"]:not(:checked) ~ span[data-i18n="character_mode"],
-.sheet-type-selector input[value="crew"]:not(:checked) ~ span[data-i18n="crew_mode"] {
+.sheet-type-selector input[value="mask"]:not(:checked) ~ span[data-i18n="mask_mode"],
+.sheet-type-selector input[value="rebellion"]:not(:checked) ~ span[data-i18n="rebellion_mode"] {
   display: none;
 }
 
 
 /* SETTINGS */
 .sheet-type[value="character"] ~ .sheet-settings > :not(.sheet-setting-char),
-.sheet-type[value="crew"] ~ .sheet-settings > :not(.sheet-setting-crew) {
+.sheet-type[value="mask"] ~ .sheet-settings > :not(.sheet-setting-mask),
+.sheet-type[value="rebellion"] ~ .sheet-settings > :not(.sheet-setting-rebellion) {
   display: none;
 }
 
@@ -302,7 +314,8 @@
 }
 
 .sheet-type:not([value="character"]) ~ .sheet-type-character,
-.sheet-type:not([value="crew"]) ~ .sheet-type-crew {
+.sheet-type:not([value="mask"]) ~ .sheet-type-mask,
+.sheet-type:not([value="rebellion"]) ~ .sheet-type-rebellion {
   display: none;
 }
 
@@ -311,7 +324,12 @@
   grid-gap: 10px 5px;
 }
 
-.sheet-type-crew {
+.sheet-type-mask {
+  grid: auto/25% calc(75% - 5px);
+  grid-gap: 10px 5px;
+}
+
+.sheet-type-rebellion {
   grid: auto/25% calc(75% - 5px);
   grid-gap: 10px 5px;
 }
@@ -684,12 +702,12 @@ textarea.sheet-smallcaps {
 /* LOGO */
 .sheet-brinkwoodlogo {
   height: 43px;
-  background-image: url("https://github.com/karraki/brinkwood/blob/e82b7fe8cdcc01fca6bbba70d241b4498d37993b/Assets/logo.png");
+  background-image: url("https://github.com/NMemelink/brinkwood/blob/master/Assets/brinkwood_logo.png?raw=true");
   background-size: 102% auto;
   background-repeat: no-repeat;
 }
 
-.sheet-crewheader {
+.sheet-maskheader {
   color: #808080;
   font-size: 28px;
   align-self: flex-start;
@@ -871,11 +889,19 @@ textarea.sheet-smallcaps {
   width: calc(36% + 6px);
 }
 
-.sheet-type-crew .sheet-playbook input[type=text] {
+.sheet-type-mask .sheet-playbook input[type=text] {
   width: calc(74% - 7px);
 }
 
-.sheet-type-crew .sheet-playbook textarea {
+.sheet-type-mask .sheet-playbook textarea {
+  width: calc(26% + 3px);
+}
+
+.sheet-type-rebellion .sheet-playbook input[type=text] {
+  width: calc(74% - 7px);
+}
+
+.sheet-type-rebellion .sheet-playbook textarea {
   width: calc(26% + 3px);
 }
 
@@ -1089,6 +1115,240 @@ div[class^="sheet-spoke"] {
   align-content: space-evenly;
   flex-wrap: wrap;
 }
+
+  /* Faction clocks */
+  .sheet-clocks-only[value="0"] ~ .sheet-container .sheet-type-faction .sheet-clocks .repcontainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .sheet-clocks-only[value="1"] ~ .sheet-container .sheet-type-faction .sheet-clocks .repcontainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .sheet-clocks-only[value="1"] ~ .sheet-container .sheet-type-faction {
+    grid: auto / auto;
+  }
+  
+  .sheet-clocks-only[value="1"] ~ .sheet-container .sheet-type-faction .sheet-factiontitle, .sheet-clocks-only[value="1"] ~ .sheet-container .sheet-type-faction .sheet-factions, .sheet-clocks-only[value="1"] ~ .sheet-container .sheet-type-faction .sheet-notes {
+    display: none;
+  }
+  
+  .sheet-size[value="4"] ~ .sheet-clock-container input:not(.sheet-zero) {
+    height: 20px;
+    width: 20px;
+  }
+  
+  .sheet-size[value="4"] ~ .sheet-clock-container input[value="1"] {
+    margin-left: 20px;
+  }
+  
+  .sheet-size[value="4"] ~ .sheet-clock-container input[value="2"] {
+    margin: 20px 0 0 20px;
+  }
+  
+  .sheet-size[value="4"] ~ .sheet-clock-container input[value="3"] {
+    margin-top: 20px;
+  }
+  
+  .sheet-size[value="6"] ~ .sheet-clock-container input:not(.sheet-zero) {
+    height: 17px;
+    width: 12px;
+  }
+  
+  .sheet-size[value="6"] ~ .sheet-clock-container input[value="1"] {
+    margin-left: 21px;
+    transform: rotate(30deg);
+  }
+  
+  .sheet-size[value="6"] ~ .sheet-clock-container input[value="2"] {
+    margin: 12px 0 0 25px;
+    transform: rotate(90deg);
+  }
+  
+  .sheet-size[value="6"] ~ .sheet-clock-container input[value="3"] {
+    margin: 22px 0 0 21px;
+    transform: rotate(150deg);
+  }
+  
+  .sheet-size[value="6"] ~ .sheet-clock-container input[value="4"] {
+    margin: 22px 0 0 8px;
+    transform: rotate(210deg);
+  }
+  
+  .sheet-size[value="6"] ~ .sheet-clock-container input[value="5"] {
+    margin: 12px 0 0 1px;
+    transform: rotate(270deg);
+  }
+  
+  .sheet-size[value="6"] ~ .sheet-clock-container input[value="6"] {
+    margin-left: 8px;
+    transform: rotate(330deg);
+  }
+  
+  .sheet-size[value="8"] ~ .sheet-clock-container input:not(.sheet-zero) {
+    height: 14px;
+    width: 10px;
+  }
+  
+  .sheet-size[value="8"] ~ .sheet-clock-container input[value="1"] {
+    margin-left: 20px;
+    transform: rotate(22.5deg);
+  }
+  
+  .sheet-size[value="8"] ~ .sheet-clock-container input[value="2"] {
+    margin: 8px 0 0 26px;
+    transform: rotate(67.5deg);
+  }
+  
+  .sheet-size[value="8"] ~ .sheet-clock-container input[value="3"] {
+    margin: 18px 0 0 26px;
+    transform: rotate(112.5deg);
+  }
+  
+  .sheet-size[value="8"] ~ .sheet-clock-container input[value="4"] {
+    margin: 25px 0 0 20px;
+    transform: rotate(157.5deg);
+  }
+  
+  .sheet-size[value="8"] ~ .sheet-clock-container input[value="5"] {
+    margin: 25px 0 0 9px;
+    transform: rotate(202.5deg);
+  }
+  
+  .sheet-size[value="8"] ~ .sheet-clock-container input[value="6"] {
+    margin: 18px 0 0 2px;
+    transform: rotate(247.5deg);
+  }
+  
+  .sheet-size[value="8"] ~ .sheet-clock-container input[value="7"] {
+    margin: 8px 0 0 2px;
+    transform: rotate(292.5deg);
+  }
+  
+  .sheet-size[value="8"] ~ .sheet-clock-container input[value="8"] {
+    margin-left: 9px;
+    transform: rotate(337.5deg);
+  }
+  
+  .sheet-size[value="10"] ~ .sheet-clock-container input:not(.sheet-zero) {
+    height: 14px;
+    width: 9px;
+  }
+  
+  .sheet-size[value="10"] ~ .sheet-clock-container input[value="1"] {
+    transform: rotate(18deg);
+    margin-left: 20px;
+  }
+  
+  .sheet-size[value="10"] ~ .sheet-clock-container input[value="2"] {
+    transform: rotate(54deg);
+    margin: 5px 0 0 27px;
+  }
+  
+  .sheet-size[value="10"] ~ .sheet-clock-container input[value="3"] {
+    transform: rotate(90deg);
+    margin: 13px 0 0 30px;
+  }
+  
+  .sheet-size[value="10"] ~ .sheet-clock-container input[value="4"] {
+    transform: rotate(126deg);
+    margin: 21px 0 0 27px;
+  }
+  
+  .sheet-size[value="10"] ~ .sheet-clock-container input[value="5"] {
+    transform: rotate(162deg);
+    margin: 26px 0 0 20px;
+  }
+  
+  .sheet-size[value="10"] ~ .sheet-clock-container input[value="6"] {
+    transform: rotate(198deg);
+    margin: 26px 0 0 12px;
+  }
+  
+  .sheet-size[value="10"] ~ .sheet-clock-container input[value="7"] {
+    transform: rotate(234deg);
+    margin: 21px 0 0 5px;
+  }
+  
+  .sheet-size[value="10"] ~ .sheet-clock-container input[value="8"] {
+    transform: rotate(270deg);
+    margin: 13px 0 0 1px;
+  }
+  
+  .sheet-size[value="10"] ~ .sheet-clock-container input[value="9"] {
+    transform: rotate(306deg);
+    margin: 5px 0 0 5px;
+  }
+  
+  .sheet-size[value="10"] ~ .sheet-clock-container input[value="10"] {
+    transform: rotate(342deg);
+    margin-left: 12px;
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input:not(.sheet-zero) {
+    height: 12px;
+    width: 8px;
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input[value="1"] {
+    margin-left: 20px;
+    transform: rotate(15deg);
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input[value="2"] {
+    margin: 4px 0 0 26px;
+    transform: rotate(45deg);
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input[value="3"] {
+    margin: 10px 0 0 29px;
+    transform: rotate(75deg);
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input[value="4"] {
+    margin: 18px 0 0 29px;
+    transform: rotate(105deg);
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input[value="5"] {
+    margin: 24px 0 0 26px;
+    transform: rotate(135deg);
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input[value="6"] {
+    margin: 28px 0 0 20px;
+    transform: rotate(165deg);
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input[value="7"] {
+    margin: 28px 0 0 12px;
+    transform: rotate(195deg);
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input[value="8"] {
+    margin: 24px 0 0 6px;
+    transform: rotate(225deg);
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input[value="9"] {
+    margin: 18px 0 0 3px;
+    transform: rotate(255deg);
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input[value="10"] {
+    margin: 10px 0 0 3px;
+    transform: rotate(295deg);
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input[value="11"] {
+    margin: 4px 0 0 6px;
+    transform: rotate(315deg);
+  }
+  
+  .sheet-size[value="12"] ~ .sheet-clock-container input[value="12"] {
+    margin-left: 12px;
+    transform: rotate(345deg);
+  }
 
 /* End positioning */
 .sheet-size[value="4"] ~ .sheet-clock-container .sheet-4clock,
@@ -1414,7 +1674,7 @@ input.sheet-zero {
   top: 3px;
 }
 
-.sheet-crewcoin input.sheet-zero, .sheet-crewcoin .sheet-zero + span {
+.sheet-maskcoin input.sheet-zero, .sheet-maskcoin .sheet-zero + span {
   position: absolute;
   left: -9px;
   top: 3px;
@@ -1487,17 +1747,17 @@ input.sheet-zero {
   border-bottom: 1px solid #b4b4b4;
 }
 
-.sheet-type-crew .sheet-specialability {
+.sheet-type-mask .sheet-specialability {
   border-bottom: 1px solid #b4b4b4;
   width: 100%;
   align-items: start;
 }
 
-.sheet-type-crew .sheet-specialability {
+.sheet-type-mask .sheet-specialability {
   padding: 4px;
 }
 
-.sheet-type-crew .sheet-abilityname {
+.sheet-type-mask .sheet-abilityname {
   width: calc(28% - 22px);
   font-size: 13px;
   min-height: 17px;
@@ -1506,7 +1766,7 @@ input.sheet-zero {
   padding: 0 1px;
 }
 
-.sheet-type-crew .sheet-abilitydesc {
+.sheet-type-mask .sheet-abilitydesc {
   width: 72%;
   min-height: 32px;
   font-size: 12px;
@@ -1534,6 +1794,67 @@ input.sheet-zero {
   line-height: 16px;
   flex: 1 1 0;
   padding: 2px 0 2px 3px;
+}
+
+/* rebellion aspect */
+.sheet-aspect {
+  grid: auto;
+}
+
+.sheet-aspect2 {
+  position: relative;
+  grid-row: 1 / 3;
+}
+
+.sheet-aspect {
+  display: grid;
+  grid: 52px / 12px 80px auto;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.sheet-aspect div {
+  background: #d6d8d9;
+  border-bottom: 1px solid black;
+}
+
+.sheet-aspect .sheet-harmeffect {
+  width: 80px;
+  color: #555;
+  font-size: 10px;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.sheet-aspect .sheet-aspectnumber {
+  line-height: 1;
+  font-size: 13px;
+  grid-column: 1;
+}
+
+.sheet-aspect .sheet-aspectclock {
+  grid-column: 2;
+}
+
+.sheet-aspect .sheet-aspectmoot {
+  grid-column: 3;
+}
+
+.sheet-aspect textarea {
+  font-size: 12px;
+  padding: 10px 4px 3px;
+  color: #000080;
+  overflow: hidden;
+  height: 52px;
+  resize: none;
+  line-height: 16px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.sheet-harmbody textarea + textarea {
+  border-left: 1px solid #d8d8d8;
 }
 
 /* HARM */
@@ -1572,6 +1893,9 @@ input.sheet-zero {
   font-size: 13px;
 }
 
+.sheet-harmbody .sheet-onecols {
+  grid-column: span 1;
+}
 .sheet-harmbody .sheet-twocols {
   grid-column: span 2;
 }
@@ -1769,12 +2093,12 @@ input.sheet-zero {
   margin-right: 0;
 }
 
-.sheet-coin .sheet-radiobox + span, .sheet-crewcoin .sheet-radiobox + span {
+.sheet-coin .sheet-radiobox + span, .sheet-maskcoin .sheet-radiobox + span {
   background: red;
   border: 1px solid black;
 }
 
-.sheet-coin input:checked ~ .sheet-radiobox + span, .sheet-crewcoin input:checked ~ .sheet-radiobox + span {
+.sheet-coin input:checked ~ .sheet-radiobox + span, .sheet-maskcoin input:checked ~ .sheet-radiobox + span {
   background: white;
 }
 
@@ -1966,7 +2290,7 @@ input.sheet-zero {
 .sheet-hold > label,
 .sheet-heat > div,
 .sheet-rep > div,
-.sheet-crewcoin2 {
+.sheet-maskcoin2 {
   flex-grow: 1;
 }
 
@@ -1975,7 +2299,7 @@ input.sheet-zero {
   position: relative;
 }
 
-.sheet-crewcoin1 {
+.sheet-maskcoin1 {
   width: 26%;
 }
 
