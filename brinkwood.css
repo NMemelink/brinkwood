@@ -701,9 +701,9 @@ textarea.sheet-smallcaps {
 
 /* LOGO */
 .sheet-brinkwoodlogo {
-  height: 43px;
+  height: 60px;
   background-image: url("https://github.com/NMemelink/brinkwood/blob/master/Assets/brinkwood_logo.png?raw=true");
-  background-size: 102% auto;
+  background-size: 200% auto;
   background-repeat: no-repeat;
 }
 
@@ -3777,4 +3777,88 @@ button[type=roll].sheet-broadcast-button {
 
 .sheet-rolltemplate-bitd-broadcast .sheet-size-12.sheet-progress-12 {
   background: red;
+}
+
+.sheet-masktype[value="lies"]
+~ :not(.sheet-mask)
+.sheet-liesaction {
+  display: none;
+}
+
+.sheet-masktype:not([value="lies"])
+~ .sheet-mask
+.sheet-liesaction {
+  display: none;
+}
+
+.sheet-masktype[value="ruin"]
+~ :not(.sheet-mask)
+.sheet-ruinaction {
+  display: none;
+}
+
+.sheet-masktype:not([value="ruin"])
+~ .sheet-mask
+.sheet-ruinaction {
+  display: none;
+}
+
+.sheet-masktype[value="terror"]
+~ :not(.sheet-mask)
+.sheet-terroraction {
+  display: none;
+}
+
+.sheet-masktype:not([value="terror"])
+~ .sheet-mask
+.sheet-terroraction {
+  display: none;
+}
+
+.sheet-masktype[value="violence"]
+~ :not(.sheet-mask)
+.sheet-violenceaction {
+  display: none;
+}
+
+.sheet-masktype:not([value="violence"])
+~ .sheet-mask
+.sheet-violenceaction {
+  display: none;
+}
+
+.sheet-masktype[value="riot"]
+~ :not(.sheet-mask)
+.sheet-riotaction {
+  display: none;
+}
+
+.sheet-masktype:not([value="riot"])
+~ .sheet-mask
+.sheet-riotaction {
+  display: none;
+}
+
+.sheet-masktype[value="torment"]
+~ :not(.sheet-mask)
+.sheet-tormentaction {
+  display: none;
+}
+
+.sheet-masktype:not([value="torment"])
+~ .sheet-mask
+.sheet-tormentaction {
+  display: none;
+}
+
+.sheet-masktype[value="judgement"]
+~ :not(.sheet-mask)
+.sheet-judgementaction {
+  display: none;
+}
+
+.sheet-masktype:not([value="judgement"])
+~ .sheet-mask
+.sheet-judgementaction {
+  display: none;
 }

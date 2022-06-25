@@ -68,7 +68,7 @@
         <option value="violence" data-i18n="mask_violence"></option>
         <option value="riot" data-i18n="mask_riot"></option>
         <option value="torment" data-i18n="mask_torment"></option>
-        <option value="judgment" data-i18n="mask_judgment"></option>
+        <option value="judgement" data-i18n="mask_judgement"></option>
       </select>
       <label class="generatebutton">
         <input type="checkbox" name="attr_generate_maskability" value="1"/><span data-i18n="add_abilities"></span>
@@ -204,13 +204,6 @@
       <label>
         <input class="checkbox squarebox" type="checkbox" name="attr_setting_custom_actions" value="1"/><span></span><span data-i18n="custom_action_labels"></span>
       </label>
-      <div class="column">
-        <input class="attribute-label" type="text" spellcheck="false" name="attr_insight_label" value="Insight"/>
-        <input class="action-label" type="text" spellcheck="false" name="attr_hunt_label" value="Hunt"/>
-        <input class="action-label" type="text" spellcheck="false" name="attr_study_label" value="Study"/>
-        <input class="action-label" type="text" spellcheck="false" name="attr_survey_label" value="Survey"/>
-        <input class="action-label" type="text" spellcheck="false" name="attr_tinker_label" value="Tinker"/>
-      </div>
     </div>
   </div>
   <div class="type-character grid">
@@ -816,9 +809,9 @@
     </div>
     <textarea class="notes sheet-2col small-margin" spellcheck="false" name="attr_notes" data-i18n-placeholder="notes"></textarea>
   </div>
-  <div class="type-mask grid">
+  <div class="type-mask mask grid">
     <div class="playbook sheet-2col flex">
-      <input class="label" type="text" spellcheck="false" name="attr_mask_type" data-i18n-placeholder="mask"/>
+      <input class="label masktype" type="text" value="" spellcheck="false" name="attr_mask_type" data-i18n-placeholder="mask"/>
       <textarea class="label" spellcheck="false" name="attr_mask_description" data-i18n-placeholder="mask_description"></textarea>
       <input class="hider" type="hidden" name="attr_show_playbook_reminder" value="1"/>
       <div class="reminder"><span data-i18n="autofill_reminder_mask"></span><br/><span data-i18n="list_masks"></span></div>
@@ -841,60 +834,323 @@
           </div>
         </fieldset>
       </div>
+
     </div>
     <div class="attribute">
+      <input class="masktype" type="hidden" name="attr_mask_type" value="-"/>
       <div class="attribute-title flex blackheader">
         <div class="label" data-i18n="mask"></div>
       </div>
-      <div class="actions">
-        <div class="action flex">
-          <input type="hidden" name="attr_hunt_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
-          <input type="hidden" name="attr_hunt_roll_mods" value=""/>
-          <input class="hidden fakeradio" type="checkbox" name="attr_hunt" value="0" checked="checked"/>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_hunt" value="1"/><span></span>
+      <div class="actions mask">
+        <div class="action flex liesaction">
+          <input type="hidden" name="attr_deceive_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input type="hidden" name="attr_deceive_roll_mods" value=""/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_deceive" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_deceive" value="1"/><span></span>
           <div class="divider"></div>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_hunt" value="2"/><span></span>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_hunt" value="3"/><span></span>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_hunt" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_Hunt" value="&{template:blades} {{charname=@{character_name}}} {{type=action}} {{subtitle=^{rolls}}} {{title-hunt=1}} {{title=^{hunt}}} {{@{position_query}}} {{effect=@{effect_query}}} @{hunt_formula} @{hunt_roll_mods} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="hunt_description"><span class="default-label inherit" data-i18n="hunt"></span><span class="custom-label inherit" name="attr_hunt_label"></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_deceive" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_deceive" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_deceive" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_deceive" value="&{template:blades} {{title=^{deceive}}} {{title-deceive=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{deceive_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="deceive_desc" data-i18n="deceive">
           </button>
         </div>
-        <div class="action flex">
-          <input type="hidden" name="attr_study_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
-          <input type="hidden" name="attr_study_roll_mods" value=""/>
-          <input class="hidden fakeradio" type="checkbox" name="attr_study" value="0" checked="checked"/>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_study" value="1"/><span></span>
+        <div class="action flex liesaction">
+          <input type="hidden" name="attr_hide_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_hide" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_hide" value="1"/><span></span>
           <div class="divider"></div>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_study" value="2"/><span></span>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_study" value="3"/><span></span>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_study" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_Study" value="&{template:blades} {{charname=@{character_name}}} {{type=action}} {{subtitle=^{rolls}}} {{title-study=1}} {{title=^{study}}} {{@{position_query}}} {{effect=@{effect_query}}} @{study_formula} @{study_roll_mods} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="study_description"><span class="default-label inherit" data-i18n="study"></span><span class="custom-label inherit" name="attr_study_label"></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_hide" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_hide" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_hide" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_hide" value="&{template:blades} {{title=^{hide}}} {{title-hide=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{hide_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="hide_desc" data-i18n="hide">
           </button>
         </div>
-        <div class="action flex">
-          <input type="hidden" name="attr_survey_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
-          <input type="hidden" name="attr_survey_roll_mods" value=""/>
-          <input class="hidden fakeradio" type="checkbox" name="attr_survey" value="0" checked="checked"/>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_survey" value="1"/><span></span>
+        <div class="action flex liesaction">
+          <input type="hidden" name="attr_reveal_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_reveal" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_reveal" value="1"/><span></span>
           <div class="divider"></div>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_survey" value="2"/><span></span>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_survey" value="3"/><span></span>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_survey" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_Survey" value="&{template:blades} {{charname=@{character_name}}} {{type=action}} {{subtitle=^{rolls}}} {{title-survey=1}} {{title=^{survey}}} {{@{position_query}}} {{effect=@{effect_query}}} @{survey_formula} @{survey_roll_mods} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="survey_description"><span class="default-label inherit" data-i18n="survey"></span><span class="custom-label inherit" name="attr_survey_label"></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_reveal" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_reveal" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_reveal" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_reveal" value="&{template:blades} {{title=^{reveal}}} {{title-reveal=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{reveal_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="reveal_desc" data-i18n="reveal">
           </button>
         </div>
-        <div class="action flex">
-          <input type="hidden" name="attr_tinker_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
-          <input type="hidden" name="attr_tinker_roll_mods" value=""/>
-          <input class="hidden fakeradio" type="checkbox" name="attr_tinker" value="0" checked="checked"/>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_tinker" value="1"/><span></span>
+        <div class="action flex liesaction">
+          <input type="hidden" name="attr_educate_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_educate" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_educate" value="1"/><span></span>
           <div class="divider"></div>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_tinker" value="2"/><span></span>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_tinker" value="3"/><span></span>
-          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_tinker" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_Tinker" value="&{template:blades} {{charname=@{character_name}}} {{type=action}} {{subtitle=^{rolls}}} {{title-tinker=1}} {{title=^{tinker}}} {{@{position_query}}} {{effect=@{effect_query}}} @{tinker_formula} @{tinker_roll_mods} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="tinker_description"><span class="default-label inherit" data-i18n="tinker"></span><span class="custom-label inherit" name="attr_tinker_label"></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_educate" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_educate" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_educate" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_educate" value="&{template:blades} {{title=^{educate}}} {{title-educate=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{educate_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="educate_desc" data-i18n="educate">
           </button>
         </div>
+        <div class="action flex ruinaction">
+          <input type="hidden" name="attr_corrupt_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_corrupt" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_corrupt" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_corrupt" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_corrupt" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_corrupt" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_corrupt" value="&{template:blades} {{title=^{corrupt}}} {{title-corrupt=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{corrupt_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="corrupt_desc" data-i18n="corrupt">
+          </button>
+        </div>
+        <div class="action flex ruinaction">
+          <input type="hidden" name="attr_crack_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_crack" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_crack" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_crack" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_crack" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_crack" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_crack" value="&{template:blades} {{title=^{crack}}} {{title-crack=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{crack_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="crack_desc" data-i18n="crack">
+          </button>
+        </div>
+        <div class="action flex ruinaction">
+          <input type="hidden" name="attr_quarry_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_quarry" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_quarry" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_quarry" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_quarry" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_quarry" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_quarry" value="&{template:blades} {{title=^{quarry}}} {{title-quarry=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{quarry_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="quarry_desc" data-i18n="quarry">
+          </button>
+        </div>
+        <div class="action flex ruinaction">
+          <input type="hidden" name="attr_spoil_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_spoil" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_spoil" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_spoil" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_spoil" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_spoil" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_spoil" value="&{template:blades} {{title=^{spoil}}} {{title-spoil=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{spoil_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="spoil_desc" data-i18n="spoil">
+          </button>
+        </div>
+        <div class="action flex terroraction">
+          <input type="hidden" name="attr_frighten_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_frighten" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_frighten" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_frighten" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_frighten" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_frighten" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_frighten" value="&{template:blades} {{title=^{frighten}}} {{title-frighten=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{frighten_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="frighten_desc" data-i18n="frighten">
+          </button>
+        </div>
+        <div class="action flex terroraction">
+          <input type="hidden" name="attr_awe_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_awe" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_awe" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_awe" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_awe" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_awe" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_awe" value="&{template:blades} {{title=^{awe}}} {{title-awe=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{awe_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="awe_desc" data-i18n="awe">
+          </button>
+        </div>
+        <div class="action flex terroraction">
+          <input type="hidden" name="attr_disarm_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_disarm" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_disarm" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_disarm" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_disarm" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_disarm" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_disarm" value="&{template:blades} {{title=^{disarm}}} {{title-disarm=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{disarm_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="disarm_desc" data-i18n="disarm">
+          </button>
+        </div>
+        <div class="action flex terroraction">
+          <input type="hidden" name="attr_explode_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_explode" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_explode" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_explode" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_explode" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_explode" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_explode" value="&{template:blades} {{title=^{explode}}} {{title-explode=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{explode_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="explode_desc" data-i18n="explode">
+          </button>
+        </div>
+        <div class="action flex violenceaction ">
+          <input type="hidden" name="attr_slaughter_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_slaughter" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slaughter" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slaughter" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slaughter" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slaughter" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_slaughter" value="&{template:blades} {{title=^{slaughter}}} {{title-slaughter=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{slaughter_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="slaughter_desc" data-i18n="slaughter">
+          </button>
+        </div>
+        <div class="action flex violenceaction">
+          <input type="hidden" name="attr_carnage_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_carnage" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_carnage" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_carnage" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_carnage" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_carnage" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_carnage" value="&{template:blades} {{title=^{carnage}}} {{title-carnage=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{carnage_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="carnage_desc" data-i18n="carnage">
+          </button>
+        </div>
+        <div class="action flex violenceaction">
+          <input type="hidden" name="attr_direct_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_direct" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_direct" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_direct" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_direct" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_direct" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_direct" value="&{template:blades} {{title=^{direct}}} {{title-direct=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{direct_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="direct_desc" data-i18n="direct">
+          </button>
+        </div>
+        <div class="action flex violenceaction">
+          <input type="hidden" name="attr_cover_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_cover" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_cover" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_cover" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_cover" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_cover" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_cover" value="&{template:blades} {{title=^{cover}}} {{title-cover=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{cover_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="cover_desc" data-i18n="cover">
+          </button>
+        </div>
+        <div class="action flex riotaction">
+          <input type="hidden" name="attr_rouse_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_rouse" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_rouse" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_rouse" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_rouse" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_rouse" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_rouse" value="&{template:blades} {{title=^{rouse}}} {{title-rouse=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{rouse_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="rouse_desc" data-i18n="rouse">
+          </button>
+        </div>
+        <div class="action flex riotaction">
+          <input type="hidden" name="attr_burn_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_burn" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_burn" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_burn" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_burn" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_burn" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_burn" value="&{template:blades} {{title=^{burn}}} {{title-burn=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{burn_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="burn_desc" data-i18n="burn">
+          </button>
+        </div>
+        <div class="action flex riotaction">
+          <input type="hidden" name="attr_inspire_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_inspire" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_inspire" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_inspire" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_inspire" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_inspire" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_inspire" value="&{template:blades} {{title=^{inspire}}} {{title-inspire=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{inspire_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="inspire_desc" data-i18n="inspire">
+          </button>
+        </div>
+        <div class="action flex riotaction">
+          <input type="hidden" name="attr_provoke_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_provoke" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_provoke" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_provoke" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_provoke" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_provoke" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_provoke" value="&{template:blades} {{title=^{provoke}}} {{title-provoke=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{provoke_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="provoke_desc" data-i18n="provoke">
+          </button>
+        </div>
+        <div class="action flex tormentaction">
+          <input type="hidden" name="attr_exsanguinate_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_exsanguinate" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_exsanguinate" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_exsanguinate" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_exsanguinate" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_exsanguinate" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_exsanguinate" value="&{template:blades} {{title=^{exsanguinate}}} {{title-exsanguinate=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{exsanguinate_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="exsanguinate_desc" data-i18n="exsanguinate">
+          </button>
+        </div>
+        <div class="action flex tormentaction">
+          <input type="hidden" name="attr_vivisect_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_vivisect" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_vivisect" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_vivisect" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_vivisect" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_vivisect" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_vivisect" value="&{template:blades} {{title=^{vivisect}}} {{title-vivisect=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{vivisect_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="vivisect_desc" data-i18n="vivisect">
+          </button>
+        </div>
+        <div class="action flex tormentaction">
+          <input type="hidden" name="attr_suture_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_suture" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_suture" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_suture" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_suture" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_suture" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_suture" value="&{template:blades} {{title=^{suture}}} {{title-suture=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{suture_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="suture_desc" data-i18n="suture">
+          </button>
+        </div>
+        <div class="action flex tormentaction">
+          <input type="hidden" name="attr_tend_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_tend" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_tend" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_tend" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_tend" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_tend" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_tend" value="&{template:blades} {{title=^{tend}}} {{title-tend=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{tend_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="tend_desc" data-i18n="tend">
+          </button>
+        </div>
+        <div class="action flex judgementaction">
+          <input type="hidden" name="attr_snipe_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_snipe" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_snipe" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_snipe" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_snipe" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_snipe" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_snipe" value="&{template:blades} {{title=^{snipe}}} {{title-snipe=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{snipe_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="snipe_desc" data-i18n="snipe">
+          </button>
+        </div>
+        <div class="action flex judgementaction">
+          <input type="hidden" name="attr_scout_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_scout" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_scout" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_scout" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_scout" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_scout" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_scout" value="&{template:blades} {{title=^{scout}}} {{title-scout=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{scout_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="scout_desc" data-i18n="scout">
+          </button>
+        </div>
+        <div class="action flex judgementaction">
+          <input type="hidden" name="attr_read_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_read" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_read" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_read" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_read" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_read" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_read" value="&{template:blades} {{title=^{read}}} {{title-read=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{read_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="read_desc" data-i18n="read">
+          </button>
+        </div>
+        <div class="action flex judgementaction">
+          <input type="hidden" name="attr_slip_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_slip" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_slip" value="&{template:blades} {{title=^{slip}}} {{title-slip=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{slip_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="slip_desc" data-i18n="slip">
+          </button>
+        </div>                   
       </div>
     </div>
     <ul class="mask-desc">
@@ -1376,57 +1632,6 @@
       Object.keys(translatedDefaults).forEach((k) => {
         translatedDefaults[k] = getTranslationByKey(translatedDefaults[k]);
       });
-      Object.keys(playbookData).forEach((playbook) => {
-        const base = playbookData[playbook].base,
-          translatedBaseAttributes = [
-            "char_cohort_name",
-            "char_cohort_subtype",
-            "friends_title",
-            "gatherinfo1",
-            "gatherinfo2",
-            "gatherinfo3",
-            "gatherinfo4",
-            "gatherinfo5",
-            "gatherinfo6",
-            "playbook_description",
-            "setting_stress_label",
-            "setting_trauma_label",
-            "special_abilities_title",
-            "xp_condition",
-            "xp_condition2",
-            "xp_condition3",
-          ];
-        Object.keys(base).forEach((attr) => {
-          if (translatedBaseAttributes.includes(attr)) {
-            base[attr] = getTranslationByKey(base[attr]);
-          }
-        });
-        playbookData[playbook].friend = [];
-        playbookData[playbook].ability = playbookData[playbook].ability.map(
-          (name) => ({
-            name: getTranslationByKey(`playbook_ability_${name}`),
-            description: getTranslationByKey(
-              `playbook_ability_${name}_description`
-            ),
-          })
-        );
-        playbookData[playbook].playbookitem.forEach((item) => {
-          item.name = getTranslationByKey(item.name);
-          item.boxes_chosen = "1";
-        });
-      });
-      const playbookAbilityMap = new Map(
-        [
-          ...Object.values(playbookData)
-            .map((x) => x.ability)
-            .reduce((m, v) => {
-              v.forEach((a) => m.add(a));
-              return m;
-            }, new Set()),
-        ].map((x) => {
-          return [x.name.toLowerCase(), x.description];
-        })
-      );
       const maskAbilityMap = new Map(
         [
           ...Object.values(maskData)
@@ -1441,13 +1646,12 @@
       );
       [
         maskData,
-        playbookData,
         actionData,
         itemData,
         translatedDefaults,
         defaultValues,
       ].forEach((x) => Object.freeze(x));
-      return [playbookAbilityMap, maskAbilityMap];
+      return [maskAbilityMap];
     }
     function mySetAttrs(attrs, options, callback) {
       const finalAttrs = Object.keys(attrs).reduce((m, k) => {
@@ -1674,27 +1878,6 @@
             );
             fillBaseData(maskData[sourceName].base, maskAttributes);
           }
-          if (
-            event.sourceAttribute === "playbook" &&
-            sourceName in playbookData
-          ) {
-            fillRepeatingSectionFromData(
-              "friend",
-              playbookData[sourceName].friend,
-              true
-            );
-            fillRepeatingSectionFromData(
-              "ability",
-              playbookData[sourceName].ability,
-              true
-            );
-            fillRepeatingSectionFromData(
-              "playbookitem",
-              playbookData[sourceName].playbookitem,
-              true
-            );
-            fillBaseData(playbookData[sourceName].base, playbookAttributes);
-          }
         }
       );
     }
@@ -1745,7 +1928,10 @@
         getAttrs(
           ["generate_source_character", "generate_source_mask", "sheet_type"],
           (v) => {
-            const data = v.sheet_type === "character" ? playbookData : maskData,
+              if(v.sheet_type === "character" ){
+                  return;
+              }
+            const data = maskData,
               genSource = v[`generate_source_${v.sheet_type}`];
             if (genSource in data) {
               emptyFirstRowIfUnnamed(sectionName);
@@ -1956,6 +2142,7 @@
           if (v.setting_custom_actions == "0") {
             return "";
           } else {
+            console.log(`{{title=@{${prefix}_label}}}`);
             return `{{title=@{${prefix}_label}}}`;
           }
         }
@@ -2021,31 +2208,31 @@
           mask_2_desc: "mask_ruin_quarry_desc",
           mask_3_desc: "mask_ruin_spoil_desc",
         },
-              },
-              terror: {
-                ability: ["frighten", "awe", "disarm", "explode"],
-                special: [
-                  "nolords",
-                  "fearyourslaves",
-                  "sowdiscord",
-                  "noexcuses",
-                  "shockawe",
-                  "primalterror",
-                  "silencedfears",
-                ],
-                base: {
-                  mask_name: "mask_terror",
-                  mask_description: "mask_terror_desc",
-                  mask_xp_condition: "mask_terror_xp",
-                  mask_0_label: "mask_terror_frighten",
-                  mask_1_label: "mask_terror_awe",
-                  mask_2_label: "mask_terror_disarm",
-                  mask_3_label: "mask_terror_explode",
-                  mask_0_desc: "mask_terror_frighten_desc",
-                  mask_1_desc: "mask_terror_awe_desc",
-                  mask_2_desc: "mask_terror_disarm_desc",
-                  mask_3_desc: "mask_terror_explode_desc",
-        },
+      },
+      terror: {
+          ability: ["frighten", "awe", "disarm", "explode"],
+          special: [
+          "nolords",
+          "fearyourslaves",
+          "sowdiscord",
+          "noexcuses",
+          "shockawe",
+          "primalterror",
+          "silencedfears",
+          ],
+          base: {
+          mask_name: "mask_terror",
+          mask_description: "mask_terror_desc",
+          mask_xp_condition: "mask_terror_xp",
+          mask_0_label: "mask_terror_frighten",
+          mask_1_label: "mask_terror_awe",
+          mask_2_label: "mask_terror_disarm",
+          mask_3_label: "mask_terror_explode",
+          mask_0_desc: "mask_terror_frighten_desc",
+          mask_1_desc: "mask_terror_awe_desc",
+          mask_2_desc: "mask_terror_disarm_desc",
+          mask_3_desc: "mask_terror_explode_desc",
+  },
       },
       violence: {
         ability: ["slaughter", "carnage", "direct", "cover"],
@@ -2089,11 +2276,11 @@
           mask_xp_condition: "mask_riot_xp",
           mask_0_label: "mask_riot_rouse",
           mask_1_label: "mask_riot_burn",
-          mask_2_label: "mask_riot_explode",
+          mask_2_label: "mask_riot_inspire",
           mask_3_label: "mask_riot_provoke",
           mask_0_desc: "mask_riot_rouse_desc",
           mask_1_desc: "mask_riot_burn_desc",
-          mask_2_desc: "mask_riot_explode_desc",
+          mask_2_desc: "mask_riot_inspire_desc",
           mask_3_desc: "mask_riot_provoke_desc",
 },
       },
@@ -2112,17 +2299,17 @@
           mask_name: "mask_torment",
           mask_description: "mask_torment_desc",
           mask_xp_condition: "mask_torment_xp",
-          mask_0_label: "mask_torment_drain",
+          mask_0_label: "mask_torment_exsanguinate",
           mask_1_label: "mask_torment_vivisect",
           mask_2_label: "mask_torment_suture",
           mask_3_label: "mask_torment_tend",
-          mask_0_desc: "mask_torment_drain_desc",
+          mask_0_desc: "mask_torment_exsanguinate_desc",
           mask_1_desc: "mask_torment_vivisect_desc",
           mask_2_desc: "mask_torment_suture_desc",
           mask_3_desc: "mask_torment_tend_desc",
  },
       },
-      judgment: {
+      judgement: {
         ability: ["snipe", "scout", "read", "slip"],
         special: [
           "executioner",
@@ -2134,965 +2321,33 @@
           "readroom",
         ],
         base: {
-          mask_name: "mask_judgment",
-          mask_description: "mask_judgment_desc",
-          mask_xp_condition: "mask_judgment_xp",
-          mask_0_label: "mask_judgment_snipe",
-          mask_1_label: "mask_judgment_scout",
-          mask_2_label: "mask_judgment_read",
-          mask_3_label: "mask_judgment_slip",
-          mask_0_desc: "mask_judgment_snipe_desc",
-          mask_1_desc: "mask_judgment_scout_desc",
-          mask_2_desc: "mask_judgment_read_desc",
-          mask_3_desc: "mask_judgment_slip_desc",
+          mask_name: "mask_judgement",
+          mask_description: "mask_judgement_desc",
+          mask_xp_condition: "mask_judgement_xp",
+          mask_0_label: "mask_judgement_snipe",
+          mask_1_label: "mask_judgement_scout",
+          mask_2_label: "mask_judgement_read",
+          mask_3_label: "mask_judgement_slip",
+          mask_0_desc: "mask_judgement_snipe_desc",
+          mask_1_desc: "mask_judgement_scout_desc",
+          mask_2_desc: "mask_judgement_read_desc",
+          mask_3_desc: "mask_judgement_slip_desc",
         },
-      },
-    };
-    const playbookData = {
-      cutter: {
-        ability: [
-          "battleborn",
-          "bodyguard",
-          "ghost_fighter",
-          "leader",
-          "mule",
-          "not_to_be_trifled_with",
-          "savage",
-          "vigorous",
-          "veteran",
-        ],
-        base: {
-          command: "1",
-          friends_title: "playbook_cutter_friends_title",
-          gatherinfo1: "gatherinfo_how_can_I_hurt",
-          gatherinfo2: "gatherinfo_whos_most_afraid",
-          gatherinfo3: "gatherinfo_whos_most_dangerous",
-          gatherinfo4: "gatherinfo_what_do_they_intend",
-          gatherinfo5: "gatherinfo_how_can_I_get_them",
-          gatherinfo6: "gatherinfo_are_they_telling",
-          playbook_description: "playbook_cutter_description",
-          skirmish: "2",
-          xp_condition: "playbook_cutter_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_hand_weapon",
-            numboxes: "1",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_heavy_weapon",
-            numboxes: "2",
-          },
-          {
-            name: "playbook_item_scary_weapon_or_tool",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_manacles_&_chain",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_rage_essence_vial",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_spiritbane_charm",
-            name: "playbook_item_spiritbane_charm",
-            numboxes: "0",
-          },
-        ],
-      },
-      faris: {
-        ability: [
-          "leader",
-          "ambitious",
-          "battleborn",
-          "expertise",
-          "ghost_legion",
-          "the_tiger's_fury",
-          "vigorous",
-          "veteran",
-        ],
-        base: {
-          char_cohort_name: "playbook_item_entourage",
-          char_cohort_quality: "0",
-          char_cohort_type: "gang",
-          char_cohort_subtype: "thugs",
-          command: "2",
-          friends_title: "playbook_faris_friends_title",
-          gatherinfo1: "gatherinfo_are_they_telling",
-          gatherinfo2: "gatherinfo_how_can_I_get_them",
-          gatherinfo3: "gatherinfo_what_do_they_really",
-          gatherinfo4: "gatherinfo_what_should_I_look",
-          gatherinfo5: "gatherinfo_where_they_vulnerable",
-          gatherinfo6: "gatherinfo_whos_most_afraid",
-          playbook_description: "playbook_faris_description",
-          setting_show_cohort: "1",
-          skirmish: "1",
-          xp_condition: "playbook_faris_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_heavy_weapon",
-            numboxes: "2",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_pair_of_pistols",
-            numboxes: "1",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_uniform",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_a_cane-sword",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_entourage",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_spiritbane_charm",
-            numboxes: "0",
-          },
-        ],
-      },
-      forger: {
-        ability: [
-          "artificer",
-          "analyst",
-          "connected",
-          "ghost_in_the_machine",
-          "a_little_something_on_the_side",
-          "machinist",
-          "saboteur",
-          "strange_methods",
-          "veteran",
-        ],
-        base: {
-          friends_title: "playbook_forger_friends_title",
-          gatherinfo1: "gatherinfo_how_can_I_get_them",
-          gatherinfo2: "gatherinfo_what_are_they_really",
-          gatherinfo3: "gatherinfo_what_can_I_tinker",
-          gatherinfo4: "gatherinfo_what_do_they_intend",
-          gatherinfo5: "gatherinfo_what_do_they_want",
-          gatherinfo6: "gatherinfo_what_is_hidden",
-          playbook_description: "playbook_forger_description",
-          study: "1",
-          tinker: "2",
-          xp_condition: "playbook_forger_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_tinkering_tools",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_electroplasm_vials",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_forged_documents",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_protective_suit",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_silence_potion_vial",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_gadget",
-            numboxes: "1",
-          },
-        ],
-      },
-      ghost: {
-        ability: [
-          "ghost_form",
-          "dissipate",
-          "manifest",
-          "poltergeist",
-          "possess",
-          "veteran",
-        ],
-        base: {
-          friends_title: "playbook_ghost_friends_title",
-          gatherinfo1: "gatherinfo_what_do_they_intend",
-          gatherinfo2: "gatherinfo_how_can_I_get_them",
-          gatherinfo3: "gatherinfo_what_are_they_really",
-          gatherinfo4: "gatherinfo_what_should_I_look",
-          gatherinfo5: "gatherinfo_wheres_the_weakness",
-          gatherinfo6: "gatherinfo_how_can_I_find",
-          playbook_description: "playbook_ghost_description",
-          setting_stress_label: "drain",
-          setting_trauma_label: "gloom",
-          setting_traumata_set: "ghost",
-          setting_vice_type: "ghost",
-          special_abilities_title: "ghost_traits",
-          xp_condition: "playbook_ghost_xp_condition",
-          xp_condition2: "playbook_ghost_xp_condition2",
-          xp_condition3: "playbook_ghost_xp_condition3",
-        },
-        playbookitem: [],
-      },
-      hound: {
-        ability: [
-          "sharpshooter",
-          "focused",
-          "ghost_hunter",
-          "scout",
-          "survivor",
-          "tough_as_nails",
-          "vengeful",
-          "veteran",
-        ],
-        base: {
-          char_cohort_name: "hunting_pet",
-          char_cohort_subtype: "hunter",
-          friends_title: "playbook_hound_friends_title",
-          gatherinfo1: "gatherinfo_what_do_they_intend",
-          gatherinfo2: "gatherinfo_how_can_I_get_them",
-          gatherinfo3: "gatherinfo_what_are_they_really",
-          gatherinfo4: "gatherinfo_where_they_vulnerable",
-          gatherinfo5: "gatherinfo_where_did_x_go",
-          gatherinfo6: "gatherinfo_how_can_I_find",
-          hunt: "2",
-          playbook_description: "playbook_hound_description",
-          setting_show_cohort: "1",
-          survey: "1",
-          xp_condition: "playbook_hound_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_pair_of_pistols",
-            numboxes: "1",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_long_rifle",
-            numboxes: "2",
-          },
-          {
-            name: "playbook_item_electroplasmic_ammunition",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_a_trained_hunting_pet",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_spyglass",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_spiritbane_charm",
-            numboxes: "0",
-          },
-        ],
-      },
-      hull: {
-        ability: [
-          "automaton",
-          "overcharge",
-          "compartments",
-          "electroplasmic_projectors",
-          "interface",
-          "secondary_hull",
-          "frame_upgrade",
-        ],
-        base: {
-          gatherinfo1: "gatherinfo_what_do_they_intend",
-          gatherinfo2: "gatherinfo_how_can_I_get_them",
-          gatherinfo3: "gatherinfo_what_are_they_really",
-          gatherinfo4: "gatherinfo_what_should_I_look",
-          gatherinfo5: "gatherinfo_wheres_the_weakness",
-          gatherinfo6: "gatherinfo_how_can_I_find",
-          playbook_description: "playbook_hull_description",
-          setting_load_h: "7",
-          setting_extra_stress: "1",
-          setting_show_frame: "1",
-          setting_stress_label: "drain",
-          setting_trauma_label: "wear",
-          setting_traumata_set: "hull",
-          setting_vice_type: "hull",
-          special_abilities_title: "hull_traits",
-          xp_condition: "playbook_hull_xp_condition",
-          xp_condition2: "playbook_hull_xp_condition2",
-          xp_condition3: "playbook_hull_xp_condition3",
-        },
-        playbookitem: [],
-      },
-      janissary: {
-        ability: [
-          "bodyguard",
-          "ghost_fighter",
-          "mule",
-          "physicker",
-          "security",
-          "sending_a_message",
-          "strategic_retreat",
-          "tough_as_nails",
-          "veteran",
-        ],
-        base: {
-          friends_title: "playbook_janissary_friends_title",
-          gatherinfo1: "gatherinfo_how_can_I_find",
-          gatherinfo2: "gatherinfo_what_are_they_really",
-          gatherinfo3: "gatherinfo_what_do_they_intend",
-          gatherinfo4: "gatherinfo_what_should_I_look",
-          gatherinfo5: "gatherinfo_whats_the_best_way",
-          gatherinfo6: "gatherinfo_whos_most_dangerous",
-          playbook_description: "playbook_janissary_description",
-          skirmish: "1",
-          survey: "2",
-          xp_condition: "playbook_janissary_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_hand_weapon",
-            numboxes: "1",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_long_rifle",
-            numboxes: "2",
-          },
-          {
-            name: "playbook_item_electroplasmic_ammunition",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_manacles_&_chain",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_spiritbane_charm",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_spyglass",
-            numboxes: "1",
-          },
-        ],
-      },
-      leech: {
-        ability: [
-          "alchemist",
-          "analyst",
-          "artificer",
-          "fortitude",
-          "ghost_ward",
-          "physicker",
-          "saboteur",
-          "venomous",
-          "veteran",
-        ],
-        base: {
-          friends_title: "playbook_leech_friends_title",
-          gatherinfo1: "gatherinfo_what_do_they_intend",
-          gatherinfo2: "gatherinfo_how_can_I_get_them",
-          gatherinfo3: "gatherinfo_are_they_telling",
-          gatherinfo4: "gatherinfo_what_can_I_tinker",
-          gatherinfo5: "gatherinfo_what_might_happen",
-          gatherinfo6: "gatherinfo_how_can_I_find",
-          playbook_description: "playbook_leech_description",
-          setting_show_bandolier: "1",
-          tinker: "2",
-          wreck: "1",
-          xp_condition: "playbook_leech_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_tinkering_tools",
-            numboxes: "1",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_wrecking_tools",
-            numboxes: "2",
-          },
-          {
-            name: "playbook_item_blowgun_&_darts,_syringes",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_bandolier_of_alchemicals_(3)",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_bandolier_of_alchemicals_(3)",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_gadget",
-            numboxes: "1",
-          },
-        ],
-      },
-      lurk: {
-        ability: [
-          "infiltrator",
-          "ambush",
-          "daredevil",
-          "the_devil's_footsteps",
-          "expertise",
-          "ghost_veil",
-          "reflexes",
-          "shadow",
-          "veteran",
-        ],
-        base: {
-          friends_title: "playbook_lurk_friends_title",
-          finesse: "1",
-          gatherinfo1: "gatherinfo_what_do_they_intend",
-          gatherinfo2: "gatherinfo_how_can_I_get_them",
-          gatherinfo3: "gatherinfo_what_should_I_look",
-          gatherinfo4: "gatherinfo_whats_the_best_way",
-          gatherinfo5: "gatherinfo_where_can_I_hide",
-          gatherinfo6: "gatherinfo_how_can_I_find",
-          playbook_description: "playbook_lurk_description",
-          prowl: "2",
-          xp_condition: "playbook_lurk_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_lockpicks",
-            numboxes: "0",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_shadow_cloak",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_light_climbing_gear",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_silence_potion_vial",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_dark-sight_goggles",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_spiritbane_charm",
-            numboxes: "0",
-          },
-        ],
-      },
-      mirage: {
-        ability: [
-          "ghost_image",
-          "cloak_&_dagger",
-          "fortune_teller",
-          "like_a_star",
-          "lost_&_found",
-          "misdirection",
-          "practiced",
-          "snake_charmer",
-          "veteran",
-        ],
-        base: {
-          attune: "1",
-          finesse: "2",
-          friends_title: "playbook_mirage_friends_title",
-          gatherinfo1: "gatherinfo_how_can_I_get_them",
-          gatherinfo2: "gatherinfo_what_are_they_really",
-          gatherinfo3: "gatherinfo_what_can_I_tinker",
-          gatherinfo4: "gatherinfo_what_do_they_intend",
-          gatherinfo5: "gatherinfo_what_do_they_want",
-          gatherinfo6: "gatherinfo_what_is_hidden",
-          playbook_description: "playbook_mirage_description",
-          xp_condition: "playbook_mirage_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_cover_identity",
-            numboxes: "0",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_disguise_kit",
-            numboxes: "1",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_loaded_dice,_trick_cards",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_ghost_key",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_spiritbane_charm",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_trance_powder",
-            numboxes: "0",
-          },
-        ],
-      },
-      rafiq: {
-        ability: [
-          "eye_for_weakness",
-          "cut-out",
-          "functioning_vice",
-          "ghost_friend",
-          "hypnotic",
-          "occultist",
-          "trust_in_me",
-          "veteran",
-        ],
-        base: {
-          char_cohort_name: "playbook_item_a_special_friend",
-          consort: "2",
-          friends_title: "playbook_rafiq_friends_title",
-          gatherinfo1: "gatherinfo_are_they_telling",
-          gatherinfo2: "gatherinfo_how_can_I_blend",
-          gatherinfo3: "gatherinfo_how_can_I_get_them",
-          gatherinfo4: "gatherinfo_what_are_they_really",
-          gatherinfo5: "gatherinfo_what_do_they_want",
-          gatherinfo6: "gatherinfo_where_they_vulnerable",
-          playbook_description: "playbook_rafiq_description",
-          setting_show_cohort: "1",
-          sway: "1",
-          xp_condition: "playbook_rafiq_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_bottle_of_whiskey",
-            numboxes: "1",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_clothes_&_jewelry",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_black_lotus_resin",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_concealed_palm_pistol",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_a_special_friend",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_spiritbane_charm",
-            numboxes: "0",
-          },
-        ],
-      },
-      rakshasa: {
-        ability: [
-          "ghoul",
-          "ambush",
-          "the_black_speech",
-          "ghost_hunter",
-          "monstrous",
-          "scout",
-          "subterfuge_rakshasa",
-          "veteran",
-        ],
-        base: {
-          char_cohort_name: "hunting_pet",
-          char_cohort_subtype: "hunter",
-          friends_title: "playbook_rakshasa_friends_title",
-          gatherinfo1: "gatherinfo_how_can_I_find",
-          gatherinfo2: "gatherinfo_what_drives_them",
-          gatherinfo3: "gatherinfo_whats_the_best_way",
-          gatherinfo4: "gatherinfo_where_they_vulnerable",
-          gatherinfo5: "gatherinfo_where_can_I_hide",
-          gatherinfo6: "gatherinfo_where_did_x_go",
-          hunt: "1",
-          playbook_description: "playbook_rakshasa_description",
-          prowl: "2",
-          setting_show_cohort: "1",
-          xp_condition: "playbook_rakshasa_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_shadow_cloak",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_dark-sight_goggles",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_light_climbing_gear",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_scary_weapon_or_tool",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_spiritbane_charm",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_a_trained_hunting_pet",
-            numboxes: "0",
-          },
-        ],
-      },
-      slide: {
-        ability: [
-          "rook's_gambit",
-          "cloak_&_dagger",
-          "ghost_voice",
-          "like_looking_into_a_mirror",
-          "a_little_something_on_the_side",
-          "mesmerism",
-          "subterfuge",
-          "trust_in_me",
-          "veteran",
-        ],
-        base: {
-          friends_title: "playbook_slide_friends_title",
-          consort: "1",
-          gatherinfo1: "gatherinfo_what_do_they_intend",
-          gatherinfo2: "gatherinfo_how_can_I_get_them",
-          gatherinfo3: "gatherinfo_are_they_telling",
-          gatherinfo4: "gatherinfo_what_are_they_really",
-          gatherinfo5: "gatherinfo_what_do_they_really",
-          gatherinfo6: "gatherinfo_how_can_I_blend",
-          playbook_description: "playbook_slide_description",
-          sway: "2",
-          xp_condition: "playbook_slide_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_clothes_&_jewelry",
-            numboxes: "0",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_disguise_kit",
-            numboxes: "1",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_loaded_dice,_trick_cards",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_trance_powder",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_a_cane-sword",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_spiritbane_charm",
-            numboxes: "0",
-          },
-        ],
-      },
-      spider: {
-        ability: [
-          "foresight",
-          "calculating",
-          "connected",
-          "functioning_vice",
-          "ghost_contract",
-          "jail_bird",
-          "mastermind",
-          "weaving_the_web",
-          "veteran",
-        ],
-        base: {
-          consort: "2",
-          friends_title: "playbook_spider_friends_title",
-          gatherinfo1: "gatherinfo_what_do_they_want",
-          gatherinfo2: "gatherinfo_what_should_I_look",
-          gatherinfo3: "gatherinfo_wheres_the_leverage",
-          gatherinfo4: "gatherinfo_how_can_I_discover",
-          gatherinfo5: "gatherinfo_what_do_they_intend",
-          gatherinfo6: "gatherinfo_how_can_I_get_them",
-          playbook_description: "playbook_spider_description",
-          study: "1",
-          xp_condition: "playbook_spider_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_cover_identity",
-            numboxes: "0",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_bottle_of_whiskey",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_blueprints",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_vial_of_slumber_essence",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_concealed_palm_pistol",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_spiritbane_charm",
-            numboxes: "0",
-          },
-        ],
-      },
-      vampire: {
-        ability: [
-          "undead",
-          "terrible_power",
-          "arcane_sight",
-          "a_void_in_the_echo",
-          "dark_talent",
-          "sinister_guile",
-          "veteran",
-        ],
-        base: {
-          friends_title: "playbook_vampire_friends_title",
-          gatherinfo1: "gatherinfo_what_do_they_intend",
-          gatherinfo2: "gatherinfo_how_can_I_get_them",
-          gatherinfo3: "gatherinfo_what_are_they_really",
-          gatherinfo4: "gatherinfo_what_should_I_look",
-          gatherinfo5: "gatherinfo_wheres_the_weakness",
-          gatherinfo6: "gatherinfo_how_can_I_find",
-          playbook_description: "playbook_vampire_description",
-          setting_extra_stress: "3",
-          setting_traumata_set: "vampire",
-          setting_vampirexp: "1",
-          setting_show_strictures: "1",
-          setting_vice_type: "vampire",
-          special_abilities_title: "vampire_traits",
-          trauma: "4",
-          xp_condition: "playbook_vampire_xp_condition",
-          xp_condition2: "playbook_vampire_xp_condition2",
-          xp_condition3: "playbook_vampire_xp_condition3",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_clothes_and_accoutrements",
-            numboxes: "0",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_personal_weapon",
-            numboxes: "1",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_shadow_cloak",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_demonbane_charm",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_spiritbane_charm",
-            numboxes: "0",
-          },
-        ],
-      },
-      vizier: {
-        ability: [
-          "red_right_hand",
-          "calculating",
-          "compel",
-          "ghost_mind",
-          "like_looking_into_a_mirror",
-          "prepared",
-          "reflexes",
-          "ritual",
-          "veteran",
-        ],
-        base: {
-          attune: "1",
-          friends_title: "playbook_vizier_friends_title",
-          gatherinfo1: "gatherinfo_are_they_telling",
-          gatherinfo2: "gatherinfo_how_can_I_discover",
-          gatherinfo3: "gatherinfo_what_do_they_intend",
-          gatherinfo4: "gatherinfo_what_might_happen",
-          gatherinfo5: "gatherinfo_where_they_vulnerable",
-          gatherinfo6: "gatherinfo_wheres_the_leverage",
-          playbook_description: "playbook_vizier_description",
-          study: "2",
-          xp_condition: "playbook_vizier_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_lightning_hook",
-            numboxes: "1",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_spirit_mask",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_demonbane_charm",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_electroplasm_vials",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_spirit_bottles_(2)",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_rare_book",
-            numboxes: "1",
-          },
-        ],
-      },
-      whisper: {
-        ability: [
-          "compel",
-          "ghost_mind",
-          "iron_will",
-          "occultist",
-          "ritual",
-          "strange_methods",
-          "tempest",
-          "warded",
-          "veteran",
-        ],
-        base: {
-          attune: "2",
-          friends_title: "playbook_whisper_friends_title",
-          gatherinfo1: "gatherinfo_what_is_arcane",
-          gatherinfo2: "gatherinfo_what_echoes",
-          gatherinfo3: "gatherinfo_what_is_hidden",
-          gatherinfo4: "gatherinfo_what_do_they_intend",
-          gatherinfo5: "gatherinfo_what_drives_them",
-          gatherinfo6: "gatherinfo_how_can_I_reveal",
-          playbook_description: "playbook_whisper_description",
-          study: "1",
-          xp_condition: "playbook_whisper_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_lightning_hook",
-            numboxes: "1",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_spirit_mask",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_electroplasm_vials",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_spirit_bottles_(2)",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_ghost_key",
-            numboxes: "0",
-          },
-          {
-            name: "playbook_item_demonbane_charm",
-            numboxes: "0",
-          },
-        ],
-      },
-      zindiq: {
-        ability: [
-          "driven",
-          "alchemist",
-          "ghost_ward",
-          "infiltrator",
-          "mesmerism",
-          "pyromancer",
-          "revolutionary",
-          "underworld_contacts",
-        ],
-        base: {
-          friends_title: "playbook_zindiq_friends_title",
-          gatherinfo1: "gatherinfo_how_can_I_hurt",
-          gatherinfo2: "gatherinfo_how_can_I_reveal",
-          gatherinfo3: "gatherinfo_what_can_I_tinker",
-          gatherinfo4: "gatherinfo_what_echoes",
-          gatherinfo5: "gatherinfo_what_is_arcane",
-          gatherinfo6: "gatherinfo_wheres_the_weakness",
-          playbook_description: "playbook_zindiq_description",
-          setting_show_bandolier: "1",
-          sway: "1",
-          wreck: "2",
-          xp_condition: "playbook_zindiq_xp_condition",
-        },
-        playbookitem: [
-          {
-            bold: "1",
-            name: "playbook_item_fine_cover_identity",
-            numboxes: "0",
-          },
-          {
-            bold: "1",
-            name: "playbook_item_fine_wrecking_tools",
-            numboxes: "2",
-          },
-          {
-            name: "playbook_item_bandolier_of_alchemicals_(3)",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_bandolier_of_alchemicals_(3)",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_blueprints",
-            numboxes: "1",
-          },
-          {
-            name: "playbook_item_spiritbane_charm",
-            numboxes: "0",
-          },
-        ],
       },
     };
     const actionData = {
       insight: ["hunt", "study", "survey", "tinker"],
       prowess: ["finesse", "prowl", "skirmish", "wreck"],
       resolve: ["attune", "command", "consort", "sway"],
+      mask: [
+          "deceive", "hide", "reveal", "educate",
+          "corrupt", "crack", "quarry", "spoil",
+          "frighten", "awe", "disarm", "explode",
+          "slaughter", "carnage", "direct", "cover",
+          "rouse", "burn", "explode", "provoke",
+          "drain", "vivisect", "suture", "tend",
+          "snipe", "scout", "read", "slip",
+        ]
     };
     const itemData = [
       {
@@ -3242,42 +2497,6 @@
       setting_trauma_label: "trauma",
       setting_wanted_label: "wanted",
       special_abilities_title: "special_abilities",
-      upgrade_carriage_name: "carriage",
-      upgrade_carriage_description: "upgrade_carriage_description",
-      upgrade_documents_name: "documents",
-      upgrade_documents_description: "upgrade_documents_description",
-      upgrade_boat_name: "boat",
-      upgrade_boat_description: "upgrade_boat_description",
-      upgrade_gear_name: "gear",
-      upgrade_gear_description: "upgrade_gear_description",
-      upgrade_hidden_name: "hidden",
-      upgrade_hidden_description: "upgrade_hidden_description",
-      upgrade_implements_name: "implements",
-      upgrade_implements_description: "upgrade_implements_description",
-      upgrade_quarters_name: "quarters",
-      upgrade_quarters_description: "upgrade_quarters_description",
-      upgrade_supplies_name: "supplies",
-      upgrade_supplies_description: "upgrade_supplies_description",
-      upgrade_secure_name: "secure",
-      upgrade_secure_description: "upgrade_secure_description",
-      upgrade_tools_name: "tools",
-      upgrade_tools_description: "upgrade_tools_description",
-      upgrade_vault_name: "vault",
-      upgrade_vault_description: "upgrade_vault_description",
-      upgrade_weapons_name: "weapons",
-      upgrade_weapons_description: "upgrade_weapons_description",
-      upgrade_workshop_name: "workshop",
-      upgrade_workshop_description: "upgrade_workshop_description",
-      upgrade_insight_name: "insight",
-      upgrade_insight_description: "upgrade_insight_description",
-      upgrade_prowess_name: "prowess",
-      upgrade_prowess_description: "upgrade_prowess_description",
-      upgrade_resolve_name: "resolve",
-      upgrade_resolve_description: "upgrade_resolve_description",
-      upgrade_personal_name: "personal",
-      upgrade_personal_description: "upgrade_personal_description",
-      upgrade_mastery_name: "mastery",
-      upgrade_mastery_description: "upgrade_mastery_description",
       xp_condition2: "xp_beliefs",
       xp_condition3: "xp_vice",
     };
@@ -3328,7 +2547,7 @@
       wreck: "0",
     };
     /* PRE-COMPUTED CONSTANTS */
-    const [playbookAbilityMap, maskAbilityMap] = dataSetup();
+    const [maskAbilityMap] = dataSetup();
     const maskAttributes = [
       ...new Set(
         [].concat(
@@ -3336,17 +2555,8 @@
         )
       ),
     ];
-    const playbookAttributes = [
-      ...new Set(
-        [].concat(
-          ...Object.keys(playbookData).map((x) =>
-            Object.keys(playbookData[x].base)
-          )
-        )
-      ),
-    ];
     const watchedAttributes = [
-      ...new Set(maskAttributes.concat(playbookAttributes)),
+      ...new Set(maskAttributes),
     ];
     const actionsFlat = [].concat(
       ...Object.keys(actionData).map((x) => actionData[x])
@@ -3389,7 +2599,6 @@
       "upgrade",
     ];
     const translatedNames = [
-      ...Object.keys(playbookData),
       ...Object.keys(maskData),
     ].reduce((m, keyName) => {
       if (getTranslationByKey(keyName)) {
@@ -3402,10 +2611,6 @@
     on("change:mask_type", (e) => {
         handlePlaybookFill(e);
     })
-    /* automatically fill abilities */
-    on("change:repeating_ability:name", () =>
-      fillAbility("repeating_ability", playbookAbilityMap)
-    );
     on("change:repeating_maskability:name", () =>
       fillAbility("repeating_maskability", maskAbilityMap)
     );

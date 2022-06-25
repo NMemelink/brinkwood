@@ -23,3 +23,12 @@ Please hack away at this character sheet! You can modifiy it, distribute it, and
 ## Roll20 Custom Sheets
 
 To use this sheet in your [roll20](roll20.net) game go to Settings > Game Settings. Character Sheet Template > Custom. Select Legacy Sanitization. Paste the contents of brinkwood.html, brinkwood.css, and translation.json into the HTML Layout, CSS Styling, and Translation tabs, accordingly. Save, ignore the preview and continue into your roll20 game. If you already had the game open make sure to refresh. Create new character sheets and get ready to play!
+
+## Changelog
+
+### 2.0
+
+* Fixed issue that stopped clocks from working.
+* Implemeted rebellion tracking sheet.
+* Implemented worker logic that fill in the mask sheet based on input.
+* Cleaned up data and general updates to the sheet.
