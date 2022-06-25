@@ -2631,6 +2631,10 @@ input.sheet-checkbox.sheet-squarebox-small, .sheet-checkbox.sheet-squarebox-smal
   height: 34px;
   padding-top: 12px;
 }
+.maskaction:first-child {
+  height: 34px;
+  padding-top: 12px;
+}
 
 .sheet-divider {
   margin-right: calc(5px + (100% - 173px)/12);
@@ -2643,6 +2647,10 @@ input.sheet-checkbox.sheet-squarebox-small, .sheet-checkbox.sheet-squarebox-smal
 }
 
 .sheet-action:first-child .sheet-divider {
+  position: relative;
+  top: -6px;
+}
+.maskaction:first-child .sheet-divider {
   position: relative;
   top: -6px;
 }

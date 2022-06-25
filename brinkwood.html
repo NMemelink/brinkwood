@@ -842,6 +842,7 @@
         <div class="label" data-i18n="mask"></div>
       </div>
       <div class="actions mask">
+        <div class="maskaction">
         <div class="action flex liesaction">
           <input type="hidden" name="attr_deceive_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
           <input type="hidden" name="attr_deceive_roll_mods" value=""/>
@@ -887,7 +888,9 @@
           <button class="rollbutton label" type="roll" name="roll_educate" value="&{template:blades} {{title=^{educate}}} {{title-educate=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{educate_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="educate_desc" data-i18n="educate">
           </button>
         </div>
-        <div class="action flex ruinaction">
+        </div>
+        <div class="maskaction">
+          <div class="action flex ruinaction">
           <input type="hidden" name="attr_corrupt_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
           <input class="hidden fakeradio" type="checkbox" name="attr_corrupt" value="0" checked="checked"/>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_corrupt" value="1"/><span></span>
@@ -931,7 +934,9 @@
           <button class="rollbutton label" type="roll" name="roll_spoil" value="&{template:blades} {{title=^{spoil}}} {{title-spoil=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{spoil_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="spoil_desc" data-i18n="spoil">
           </button>
         </div>
-        <div class="action flex terroraction">
+        </div>
+        <div class="maskaction">
+          <div class="action flex terroraction">
           <input type="hidden" name="attr_frighten_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
           <input class="hidden fakeradio" type="checkbox" name="attr_frighten" value="0" checked="checked"/>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_frighten" value="1"/><span></span>
@@ -975,7 +980,9 @@
           <button class="rollbutton label" type="roll" name="roll_explode" value="&{template:blades} {{title=^{explode}}} {{title-explode=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{explode_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="explode_desc" data-i18n="explode">
           </button>
         </div>
-        <div class="action flex violenceaction ">
+        </div>
+        <div class="maskaction">
+          <div class="action flex violenceaction">
           <input type="hidden" name="attr_slaughter_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
           <input class="hidden fakeradio" type="checkbox" name="attr_slaughter" value="0" checked="checked"/>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slaughter" value="1"/><span></span>
@@ -1019,7 +1026,9 @@
           <button class="rollbutton label" type="roll" name="roll_cover" value="&{template:blades} {{title=^{cover}}} {{title-cover=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{cover_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="cover_desc" data-i18n="cover">
           </button>
         </div>
-        <div class="action flex riotaction">
+        </div>
+        <div class="maskaction">
+          <div class="action flex riotaction">
           <input type="hidden" name="attr_rouse_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
           <input class="hidden fakeradio" type="checkbox" name="attr_rouse" value="0" checked="checked"/>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_rouse" value="1"/><span></span>
@@ -1063,7 +1072,9 @@
           <button class="rollbutton label" type="roll" name="roll_provoke" value="&{template:blades} {{title=^{provoke}}} {{title-provoke=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{provoke_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="provoke_desc" data-i18n="provoke">
           </button>
         </div>
-        <div class="action flex tormentaction">
+        </div>
+        <div class="maskaction">
+          <div class="action flex tormentaction">
           <input type="hidden" name="attr_exsanguinate_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
           <input class="hidden fakeradio" type="checkbox" name="attr_exsanguinate" value="0" checked="checked"/>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_exsanguinate" value="1"/><span></span>
@@ -1107,7 +1118,9 @@
           <button class="rollbutton label" type="roll" name="roll_tend" value="&{template:blades} {{title=^{tend}}} {{title-tend=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{tend_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="tend_desc" data-i18n="tend">
           </button>
         </div>
-        <div class="action flex judgementaction">
+        </div>
+        <div class="maskaction">
+          <div class="action flex judgementaction">
           <input type="hidden" name="attr_snipe_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
           <input class="hidden fakeradio" type="checkbox" name="attr_snipe" value="0" checked="checked"/>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_snipe" value="1"/><span></span>
@@ -1150,6 +1163,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="4"/><span></span>
           <button class="rollbutton label" type="roll" name="roll_slip" value="&{template:blades} {{title=^{slip}}} {{title-slip=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{slip_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="slip_desc" data-i18n="slip">
           </button>
+        </div>                   
         </div>                   
       </div>
     </div>
