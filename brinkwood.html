@@ -838,7 +838,7 @@
     </div>
     <div class="attribute">
       <input class="masktype" type="hidden" name="attr_mask_type" value="-"/>
-      <div class="attribute-title flex blackheader">
+      <div class="attribute-title flex blackheader" style="width: 115%;">
         <div class="label" data-i18n="mask"></div>
       </div>
       <div class="actions mask">
@@ -852,7 +852,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_deceive" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_deceive" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_deceive" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_deceive" value="&{template:blades} {{title=^{deceive}}} {{title-deceive=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{deceive_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="deceive_desc" data-i18n="deceive">
+          <button class="rollbutton label" type="roll" name="roll_deceive" value="&{template:blades} {{title=^{deceive}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-deceive=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{deceive_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="deceive_desc" data-i18n="deceive">
           </button>
         </div>
         <div class="action flex liesaction">
@@ -863,7 +863,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_hide" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_hide" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_hide" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_hide" value="&{template:blades} {{title=^{hide}}} {{title-hide=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{hide_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="hide_desc" data-i18n="hide">
+          <button class="rollbutton label" type="roll" name="roll_hide" value="&{template:blades} {{title=^{hide}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-hide=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{hide_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="hide_desc" data-i18n="hide">
           </button>
         </div>
         <div class="action flex liesaction">
@@ -874,7 +874,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_reveal" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_reveal" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_reveal" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_reveal" value="&{template:blades} {{title=^{reveal}}} {{title-reveal=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{reveal_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="reveal_desc" data-i18n="reveal">
+          <button class="rollbutton label" type="roll" name="roll_reveal" value="&{template:blades} {{title=^{reveal}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-reveal=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{reveal_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="reveal_desc" data-i18n="reveal">
           </button>
         </div>
         <div class="action flex liesaction">
@@ -885,7 +885,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_educate" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_educate" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_educate" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_educate" value="&{template:blades} {{title=^{educate}}} {{title-educate=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{educate_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="educate_desc" data-i18n="educate">
+          <button class="rollbutton label" type="roll" name="roll_educate" value="&{template:blades} {{title=^{educate}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-educate=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{educate_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="educate_desc" data-i18n="educate">
           </button>
         </div>
         </div>
@@ -898,7 +898,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_corrupt" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_corrupt" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_corrupt" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_corrupt" value="&{template:blades} {{title=^{corrupt}}} {{title-corrupt=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{corrupt_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="corrupt_desc" data-i18n="corrupt">
+          <button class="rollbutton label" type="roll" name="roll_corrupt" value="&{template:blades} {{title=^{corrupt}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-corrupt=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{corrupt_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="corrupt_desc" data-i18n="corrupt">
           </button>
         </div>
         <div class="action flex ruinaction">
@@ -909,7 +909,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_crack" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_crack" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_crack" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_crack" value="&{template:blades} {{title=^{crack}}} {{title-crack=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{crack_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="crack_desc" data-i18n="crack">
+          <button class="rollbutton label" type="roll" name="roll_crack" value="&{template:blades} {{title=^{crack}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-crack=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{crack_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="crack_desc" data-i18n="crack">
           </button>
         </div>
         <div class="action flex ruinaction">
@@ -920,7 +920,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_quarry" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_quarry" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_quarry" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_quarry" value="&{template:blades} {{title=^{quarry}}} {{title-quarry=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{quarry_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="quarry_desc" data-i18n="quarry">
+          <button class="rollbutton label" type="roll" name="roll_quarry" value="&{template:blades} {{title=^{quarry}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-quarry=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{quarry_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="quarry_desc" data-i18n="quarry">
           </button>
         </div>
         <div class="action flex ruinaction">
@@ -931,7 +931,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_spoil" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_spoil" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_spoil" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_spoil" value="&{template:blades} {{title=^{spoil}}} {{title-spoil=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{spoil_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="spoil_desc" data-i18n="spoil">
+          <button class="rollbutton label" type="roll" name="roll_spoil" value="&{template:blades} {{title=^{spoil}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-spoil=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{spoil_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="spoil_desc" data-i18n="spoil">
           </button>
         </div>
         </div>
@@ -944,7 +944,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_frighten" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_frighten" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_frighten" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_frighten" value="&{template:blades} {{title=^{frighten}}} {{title-frighten=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{frighten_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="frighten_desc" data-i18n="frighten">
+          <button class="rollbutton label" type="roll" name="roll_frighten" value="&{template:blades} {{title=^{frighten}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-frighten=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{frighten_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="frighten_desc" data-i18n="frighten">
           </button>
         </div>
         <div class="action flex terroraction">
@@ -955,7 +955,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_awe" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_awe" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_awe" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_awe" value="&{template:blades} {{title=^{awe}}} {{title-awe=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{awe_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="awe_desc" data-i18n="awe">
+          <button class="rollbutton label" type="roll" name="roll_awe" value="&{template:blades} {{title=^{awe}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-awe=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{awe_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="awe_desc" data-i18n="awe">
           </button>
         </div>
         <div class="action flex terroraction">
@@ -966,7 +966,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_disarm" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_disarm" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_disarm" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_disarm" value="&{template:blades} {{title=^{disarm}}} {{title-disarm=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{disarm_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="disarm_desc" data-i18n="disarm">
+          <button class="rollbutton label" type="roll" name="roll_disarm" value="&{template:blades} {{title=^{disarm}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-disarm=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{disarm_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="disarm_desc" data-i18n="disarm">
           </button>
         </div>
         <div class="action flex terroraction">
@@ -977,7 +977,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_explode" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_explode" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_explode" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_explode" value="&{template:blades} {{title=^{explode}}} {{title-explode=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{explode_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="explode_desc" data-i18n="explode">
+          <button class="rollbutton label" type="roll" name="roll_explode" value="&{template:blades} {{title=^{explode}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-explode=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{explode_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="explode_desc" data-i18n="explode">
           </button>
         </div>
         </div>
@@ -990,7 +990,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slaughter" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slaughter" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slaughter" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_slaughter" value="&{template:blades} {{title=^{slaughter}}} {{title-slaughter=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{slaughter_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="slaughter_desc" data-i18n="slaughter">
+          <button class="rollbutton label" type="roll" name="roll_slaughter" value="&{template:blades} {{title=^{slaughter}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-slaughter=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{slaughter_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="slaughter_desc" data-i18n="slaughter">
           </button>
         </div>
         <div class="action flex violenceaction">
@@ -1001,7 +1001,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_carnage" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_carnage" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_carnage" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_carnage" value="&{template:blades} {{title=^{carnage}}} {{title-carnage=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{carnage_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="carnage_desc" data-i18n="carnage">
+          <button class="rollbutton label" type="roll" name="roll_carnage" value="&{template:blades} {{title=^{carnage}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-carnage=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{carnage_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="carnage_desc" data-i18n="carnage">
           </button>
         </div>
         <div class="action flex violenceaction">
@@ -1012,7 +1012,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_direct" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_direct" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_direct" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_direct" value="&{template:blades} {{title=^{direct}}} {{title-direct=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{direct_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="direct_desc" data-i18n="direct">
+          <button class="rollbutton label" type="roll" name="roll_direct" value="&{template:blades} {{title=^{direct}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-direct=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{direct_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="direct_desc" data-i18n="direct">
           </button>
         </div>
         <div class="action flex violenceaction">
@@ -1023,7 +1023,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_cover" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_cover" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_cover" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_cover" value="&{template:blades} {{title=^{cover}}} {{title-cover=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{cover_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="cover_desc" data-i18n="cover">
+          <button class="rollbutton label" type="roll" name="roll_cover" value="&{template:blades} {{title=^{cover}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-cover=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{cover_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="cover_desc" data-i18n="cover">
           </button>
         </div>
         </div>
@@ -1036,7 +1036,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_rouse" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_rouse" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_rouse" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_rouse" value="&{template:blades} {{title=^{rouse}}} {{title-rouse=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{rouse_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="rouse_desc" data-i18n="rouse">
+          <button class="rollbutton label" type="roll" name="roll_rouse" value="&{template:blades} {{title=^{rouse}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-rouse=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{rouse_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="rouse_desc" data-i18n="rouse">
           </button>
         </div>
         <div class="action flex riotaction">
@@ -1047,7 +1047,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_burn" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_burn" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_burn" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_burn" value="&{template:blades} {{title=^{burn}}} {{title-burn=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{burn_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="burn_desc" data-i18n="burn">
+          <button class="rollbutton label" type="roll" name="roll_burn" value="&{template:blades} {{title=^{burn}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-burn=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{burn_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="burn_desc" data-i18n="burn">
           </button>
         </div>
         <div class="action flex riotaction">
@@ -1058,7 +1058,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_inspire" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_inspire" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_inspire" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_inspire" value="&{template:blades} {{title=^{inspire}}} {{title-inspire=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{inspire_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="inspire_desc" data-i18n="inspire">
+          <button class="rollbutton label" type="roll" name="roll_inspire" value="&{template:blades} {{title=^{inspire}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-inspire=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{inspire_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="inspire_desc" data-i18n="inspire">
           </button>
         </div>
         <div class="action flex riotaction">
@@ -1069,7 +1069,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_provoke" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_provoke" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_provoke" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_provoke" value="&{template:blades} {{title=^{provoke}}} {{title-provoke=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{provoke_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="provoke_desc" data-i18n="provoke">
+          <button class="rollbutton label" type="roll" name="roll_provoke" value="&{template:blades} {{title=^{provoke}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-provoke=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{provoke_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="provoke_desc" data-i18n="provoke">
           </button>
         </div>
         </div>
@@ -1082,7 +1082,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_exsanguinate" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_exsanguinate" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_exsanguinate" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_exsanguinate" value="&{template:blades} {{title=^{exsanguinate}}} {{title-exsanguinate=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{exsanguinate_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="exsanguinate_desc" data-i18n="exsanguinate">
+          <button class="rollbutton label" type="roll" name="roll_exsanguinate" value="&{template:blades} {{title=^{exsanguinate}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-exsanguinate=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{exsanguinate_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="exsanguinate_desc" data-i18n="exsanguinate">
           </button>
         </div>
         <div class="action flex tormentaction">
@@ -1093,7 +1093,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_vivisect" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_vivisect" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_vivisect" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_vivisect" value="&{template:blades} {{title=^{vivisect}}} {{title-vivisect=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{vivisect_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="vivisect_desc" data-i18n="vivisect">
+          <button class="rollbutton label" type="roll" name="roll_vivisect" value="&{template:blades} {{title=^{vivisect}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-vivisect=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{vivisect_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="vivisect_desc" data-i18n="vivisect">
           </button>
         </div>
         <div class="action flex tormentaction">
@@ -1104,7 +1104,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_suture" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_suture" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_suture" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_suture" value="&{template:blades} {{title=^{suture}}} {{title-suture=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{suture_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="suture_desc" data-i18n="suture">
+          <button class="rollbutton label" type="roll" name="roll_suture" value="&{template:blades} {{title=^{suture}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-suture=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{suture_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="suture_desc" data-i18n="suture">
           </button>
         </div>
         <div class="action flex tormentaction">
@@ -1115,7 +1115,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_tend" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_tend" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_tend" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_tend" value="&{template:blades} {{title=^{tend}}} {{title-tend=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{tend_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="tend_desc" data-i18n="tend">
+          <button class="rollbutton label" type="roll" name="roll_tend" value="&{template:blades} {{title=^{tend}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-tend=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{tend_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="tend_desc" data-i18n="tend">
           </button>
         </div>
         </div>
@@ -1128,7 +1128,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_snipe" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_snipe" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_snipe" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_snipe" value="&{template:blades} {{title=^{snipe}}} {{title-snipe=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{snipe_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="snipe_desc" data-i18n="snipe">
+          <button class="rollbutton label" type="roll" name="roll_snipe" value="&{template:blades} {{title=^{snipe}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-snipe=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{snipe_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="snipe_desc" data-i18n="snipe">
           </button>
         </div>
         <div class="action flex judgementaction">
@@ -1139,7 +1139,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_scout" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_scout" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_scout" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_scout" value="&{template:blades} {{title=^{scout}}} {{title-scout=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{scout_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="scout_desc" data-i18n="scout">
+          <button class="rollbutton label" type="roll" name="roll_scout" value="&{template:blades} {{title=^{scout}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-scout=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{scout_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="scout_desc" data-i18n="scout">
           </button>
         </div>
         <div class="action flex judgementaction">
@@ -1150,7 +1150,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_read" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_read" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_read" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_read" value="&{template:blades} {{title=^{read}}} {{title-read=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{read_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="read_desc" data-i18n="read">
+          <button class="rollbutton label" type="roll" name="roll_read" value="&{template:blades} {{title=^{read}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-read=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{read_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="read_desc" data-i18n="read">
           </button>
         </div>
         <div class="action flex judgementaction">
@@ -1161,13 +1161,58 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_slip" value="&{template:blades} {{title=^{slip}}} {{title-slip=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}} {{short=short}} @{slip_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="slip_desc" data-i18n="slip">
+          <button class="rollbutton label" type="roll" name="roll_slip" value="&{template:blades} {{title=^{slip}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-slip=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{slip_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="slip_desc" data-i18n="slip">
           </button>
         </div>                   
+        </div>                
+        <div class="maskaction">
+          <div class="action flex judgmentaction">
+          <input type="hidden" name="attr_snipe_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_snipe" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_snipe" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_snipe" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_snipe" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_snipe" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_snipe" value="&{template:blades} {{title=^{snipe}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-snipe=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{snipe_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="snipe_desc" data-i18n="snipe">
+          </button>
+        </div>
+        <div class="action flex judgmentaction">
+          <input type="hidden" name="attr_scout_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_scout" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_scout" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_scout" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_scout" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_scout" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_scout" value="&{template:blades} {{title=^{scout}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-scout=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{scout_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="scout_desc" data-i18n="scout">
+          </button>
+        </div>
+        <div class="action flex judgmentaction">
+          <input type="hidden" name="attr_read_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_read" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_read" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_read" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_read" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_read" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_read" value="&{template:blades} {{title=^{read}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-read=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{read_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="read_desc" data-i18n="read">
+          </button>
+        </div>
+        <div class="action flex judgmentaction">
+          <input type="hidden" name="attr_slip_formula" value=" {{?{@{bonusdice}|0,zerodice=[[d6]]&amp;#44; [[d6]]|1,dice=[[d6]]|2,dice=[[d6]]&amp;#44; [[d6]]|3,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|4,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|5,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|6,dice=[[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]&amp;#44; [[d6]]|-1,zerodice=[[d6]]&amp;#44; [[d6]]|-2,zerodice=[[d6]]&amp;#44; [[d6]]|-3,zerodice=[[d6]]&amp;#44; [[d6]]}}}"/>
+          <input class="hidden fakeradio" type="checkbox" name="attr_slip" value="0" checked="checked"/>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="1"/><span></span>
+          <div class="divider"></div>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="2"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="3"/><span></span>
+          <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="4"/><span></span>
+          <button class="rollbutton label" type="roll" name="roll_slip" value="&{template:blades} {{charname=@{character_name}}} {{type=action}} {{subtitle=^{rolls}}} {{title-slip=1}} {{title-text=1}} {{title=^{slip}}} {{@{position_query}}} {{effect=@{effect_query}}} @{slip_formula} @{slip_roll_mods} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="slip_description"><span class="default-label inherit" data-i18n="slip"></span><span class="custom-label inherit" name="attr_slip_label"></span>          </button>
         </div>                   
+        </div>                 
       </div>
     </div>
-    <ul class="mask-desc">
+    <ul class="mask-desc" style="width: 95%; margin-left: auto;">
       <li class="nondot" data-i18n="mask_description"></li>
       <li>
         <div class="auto-expand"><span name="attr_mask_0_desc"></span>
@@ -1191,7 +1236,7 @@
     </li>
     </ul>
     <div class="stress4">
-      <div class="sparmor-header flex blackheader">
+      <div class="sparmor-header flex blackheader" style="width: 115%;">
         <div class="label sparmor-mark" data-i18n="sparmor_label"></div>
         <div class="sparmorholder flex">
           <input class="tooth zero" type="radio" name="attr_sparmor" value="0" checked="checked"/><span></span>
@@ -1199,7 +1244,7 @@
         </div>
       </div>
     </div>
-    <ul class="mask-desc">
+    <ul class="mask-desc" style="width: 95%; margin-left: auto;">
       <li class="nondot" data-i18n="mask_bg_overlap"></li>
     </ul>
 
@@ -1540,14 +1585,14 @@
   <div class="holder {{type}} {{short}} {{language}}">{{#charimage}}
     <div class="char-image">[Image]({{charimage}})</div>{{/charimage}}
     <div class="header{{#charimage}} narrow{{/charimage}}">{{charname}} {{subtitle}}</div>
-    <div class="title">{{#title-text}}<span class="{{small-title}}">{{title}}</span>{{/title-text}}{{^title-text}}{{#rolltypetext}}[{{rolltypetext}}]({{rolltypeimage}}){{/rolltypetext}}{{#title-insight}}<img data-i18n-alt="insight" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-insight.png"/>{{/title-insight}}{{#title-prowess}}<img data-i18n-alt="prowess" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-prowess.png"/>{{/title-prowess}}{{#title-resolve}}<img data-i18n-alt="resolve" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-resolve.png"/>{{/title-resolve}}{{#title-hunt}}<img data-i18n-alt="hunt" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-hunt.png"/>{{/title-hunt}}{{#title-study}}<img data-i18n-alt="study" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-study.png"/>{{/title-study}}{{#title-survey}}<img data-i18n-alt="survey" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-survey.png"/>{{/title-survey}}{{#title-tinker}}<img data-i18n-alt="tinker" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-tinker.png"/>{{/title-tinker}}{{#title-finesse}}<img data-i18n-alt="finesse" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-finesse.png"/>{{/title-finesse}}{{#title-prowl}}<img data-i18n-alt="prowl" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-prowl.png"/>{{/title-prowl}}{{#title-skirmish}}<img data-i18n-alt="skirmish" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-skirmish.png"/>{{/title-skirmish}}{{#title-wreck}}<img data-i18n-alt="wreck" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-wreck.png"/>{{/title-wreck}}{{#title-attune}}<img data-i18n-alt="attune" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-attune.png"/>{{/title-attune}}{{#title-command}}<img data-i18n-alt="command" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-command.png"/>{{/title-command}}{{#title-consort}}<img data-i18n-alt="consort" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-consort.png"/>{{/title-consort}}{{#title-sway}}<img data-i18n-alt="sway" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-sway.png"/>{{/title-sway}}{{#title-fortune}}<img data-i18n-alt="fortune" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-fortune.png"/>{{/title-fortune}}{{#title-vice}}<img data-i18n-alt="vice" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-vice.png"/>{{/title-vice}}{{#title-mask_tier}}<img data-i18n-alt="mask_tier" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-mask_tier.png"/>{{/title-mask_tier}}{{#title-entanglement}}<img data-i18n-alt="entanglement" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-entanglement.png"/>{{/title-entanglement}}{{#title-cohort_quality}}<img data-i18n-alt="cohort_quality" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-cohort_quality.png"/>{{/title-cohort_quality}}{{#title-lifestyle}}<img data-i18n-alt="lifestyle" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-lifestyle.png"/>{{/title-lifestyle}}{{#title-recovery}}<img data-i18n-alt="recovery" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-recovery.png"/>{{/title-recovery}}{{#title-engagement}}<img data-i18n-alt="engagement" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-engagement.png"/>{{/title-engagement}}{{/title-text}}
+    <div class="title">{{#title-text}}{{#title-exsanguinate}}<span class="{{small-title}}" style="font-size: 27px;">{{title}}</span>{{/title-exsanguinate}}{{^title-exsanguinate}}<span class="{{small-title}}">{{title}}</span>{{/title-exsanguinate}}{{/title-text}}{{^title-text}}{{#rolltypetext}}[{{rolltypetext}}]({{rolltypeimage}}){{/rolltypetext}}{{#title-insight}}<img data-i18n-alt="insight" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-insight.png"/>{{/title-insight}}{{#title-prowess}}<img data-i18n-alt="prowess" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-prowess.png"/>{{/title-prowess}}{{#title-resolve}}<img data-i18n-alt="resolve" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-resolve.png"/>{{/title-resolve}}{{#title-hunt}}<img data-i18n-alt="hunt" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-hunt.png"/>{{/title-hunt}}{{#title-study}}<img data-i18n-alt="study" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-study.png"/>{{/title-study}}{{#title-survey}}<img data-i18n-alt="survey" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-survey.png"/>{{/title-survey}}{{#title-tinker}}<img data-i18n-alt="tinker" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-tinker.png"/>{{/title-tinker}}{{#title-finesse}}<img data-i18n-alt="finesse" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-finesse.png"/>{{/title-finesse}}{{#title-prowl}}<img data-i18n-alt="prowl" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-prowl.png"/>{{/title-prowl}}{{#title-skirmish}}<img data-i18n-alt="skirmish" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-skirmish.png"/>{{/title-skirmish}}{{#title-wreck}}<img data-i18n-alt="wreck" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-wreck.png"/>{{/title-wreck}}{{#title-attune}}<img data-i18n-alt="attune" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-attune.png"/>{{/title-attune}}{{#title-command}}<img data-i18n-alt="command" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-command.png"/>{{/title-command}}{{#title-consort}}<img data-i18n-alt="consort" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-consort.png"/>{{/title-consort}}{{#title-sway}}<img data-i18n-alt="sway" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-sway.png"/>{{/title-sway}}{{#title-fortune}}<img data-i18n-alt="fortune" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-fortune.png"/>{{/title-fortune}}{{#title-vice}}<img data-i18n-alt="vice" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-vice.png"/>{{/title-vice}}{{#title-mask_tier}}<img data-i18n-alt="mask_tier" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-mask_tier.png"/>{{/title-mask_tier}}{{#title-entanglement}}<img data-i18n-alt="entanglement" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-entanglement.png"/>{{/title-entanglement}}{{#title-cohort_quality}}<img data-i18n-alt="cohort_quality" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-cohort_quality.png"/>{{/title-cohort_quality}}{{#title-lifestyle}}<img data-i18n-alt="lifestyle" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-lifestyle.png"/>{{/title-lifestyle}}{{#title-recovery}}<img data-i18n-alt="recovery" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-recovery.png"/>{{/title-recovery}}{{#title-engagement}}<img data-i18n-alt="engagement" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Blades%20in%20the%20Dark/Assets/rolltemplate/rolltemplate-title-engagement.png"/>{{/title-engagement}}{{/title-text}}
     </div>
     <div class="dice">{{^zerodice}}{{dice}}{{/zerodice}}{{#zerodice}}
       <div class="zerodice1">{{zerodice}}</div>
       <div class="zerodice2" data-i18n="zerodice"></div>{{/zerodice}}
     </div>{{#position}}
     <div class="position">{{position}}</div>{{/position}}{{#effect}}
-    <div class="effect">{{effect}}</div>{{/effect}}{{#instructions}}
+    <div class="effect">{{effect}}</div>{{/effect}}{{#instructions}}  
     <div class="instructions">{{instructions}}</div>{{/instructions}}{{#notes}}
     <div class="notes">{{notes}}</div>{{/notes}}
   </div>
@@ -1891,6 +1936,11 @@
           }
           if (v.setting_autofill !== "1") return;
           if (event.sourceAttribute === "mask_type" && sourceName in maskData) {
+            // Make sure to support both type variants of judgment and judgement
+            if(sourceName === "judgment"){
+              sourceName = "judgement";
+            }
+
             fillRepeatingSectionFromData(
               "ability",
               maskData[sourceName].special,

@@ -3870,3 +3870,15 @@ button[type=roll].sheet-broadcast-button {
 .sheet-judgementaction {
   display: none;
 }
+
+.sheet-masktype[value="judgment"]
+~ :not(.sheet-mask)
+.sheet-judgmentaction {
+  display: none;
+}
+
+.sheet-masktype:not([value="judgment"])
+~ .sheet-mask
+.sheet-judgmentaction {
+  display: none;
+}

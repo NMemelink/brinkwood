@@ -29,6 +29,8 @@ To use this sheet in your [roll20](roll20.net) game go to Settings > Game Settin
 * Made mask actions automatically update based on mask_type.
 * Fixed mask actions so that they have the proper label in the roll template.
 * Implemented code that forces the value of mask_type to lower case to make css classes consistent.
+* Support both judgement and judgment.
+* Give better support to long action verbs such as the torment sheet action "Exsanguinate".
 
 ### 2.0
 
