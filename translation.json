@@ -643,7 +643,7 @@
 	"repelled": "Repelled",
 	"reputation": "Reputation",
 	"reset?": "reset?",
-	"resist_instructions": "Suffer <strong>6 stress minus the highest die result.</strong> When you roll a critical on resistance, clear 1 stress.",
+	"resist_instructions": "Suffer stress according to the highest result <strong>6:</strong> 1 stress;  <strong>4/5:</strong> 2 stress; <strong>1-3:</strong> 3 stress; .",
 	"resistance_bonus": "Resistance bonus:",
 	"resists": "resists",
 	"risky": "Risky",
