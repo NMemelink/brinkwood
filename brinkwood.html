@@ -1207,7 +1207,7 @@
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="2"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="3"/><span></span>
           <input class="checkbox circlebox fakeradio" type="checkbox" name="attr_slip" value="4"/><span></span>
-          <button class="rollbutton label" type="roll" name="roll_slip" value="&{template:blades} {{charname=@{character_name}}} {{type=action}} {{subtitle=^{rolls}}} {{title-slip=1}} {{title-text=1}} {{title=^{slip}}} {{@{position_query}}} {{effect=@{effect_query}}} @{slip_formula} @{slip_roll_mods} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="slip_description"><span class="default-label inherit" data-i18n="slip"></span><span class="custom-label inherit" name="attr_slip_label"></span>          </button>
+          <button class="rollbutton label" type="roll" name="roll_slip" value="&{template:blades} {{title=^{slip}}} {{@{position_query}}} {{effect=@{effect_query}}} {{title-slip=1}} {{title-text=1}} {{type=action}} {{subtitle=@{character_name} ^{rolls}}}  @{slip_formula} {{charimage=@{chat_image}}} @{title_text}" data-i18n-title="slip_desc" data-i18n="slip">
         </div>                   
         </div>                 
       </div>
@@ -2335,7 +2335,7 @@
         },
       },
       riot: {
-        ability: ["rouse", "burn", "explode", "provoke"],
+        ability: ["rouse", "burn", "inspire", "provoke"],
         special: [
           "languageunheard",
           "commonstruggle",
@@ -2360,7 +2360,7 @@
 },
       },
       torment: {
-        ability: ["drain", "vivisect", "suture", "tend"],
+        ability: ["exsanguinate", "vivisect", "suture", "tend"],
         special: [
           "lure",
           "astitchintime",
@@ -2419,7 +2419,7 @@
           "corrupt", "crack", "quarry", "spoil",
           "frighten", "awe", "disarm", "explode",
           "slaughter", "carnage", "direct", "cover",
-          "rouse", "burn", "explode", "provoke",
+          "rouse", "burn", "inspire", "provoke",
           "exsanguinate", "vivisect", "suture", "tend",
           "snipe", "scout", "read", "slip",
         ]
